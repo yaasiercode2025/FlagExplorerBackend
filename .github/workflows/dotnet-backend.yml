@@ -78,16 +78,12 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
 
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v1
     - name: Build Docker image
-      run: |
-          docker build -t my-windows-image:latest .
+      run: docker build -t myapp:latest .
 
     - name: Run Docker container
-      run: |
-          docker run --name my-windows-container my-windows-image:latest
-     
+      run: docker run --name myapp-container -d myapp:latest
+        
     # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test
