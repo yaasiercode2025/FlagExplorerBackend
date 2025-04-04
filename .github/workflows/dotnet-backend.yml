@@ -75,20 +75,10 @@ jobs:
       uses: microsoft/setup-msbuild@v2
 
     #Add docker support
-    - name: Set up Docker Buildx
-      uses: docker/setup-buildx-action@v2
-      
-    - name: Build and push Docker image
-      uses: docker/build-push-action@v2
+    - name: Execute-in-windows-docker-container
+      uses: philips-software/run-windows-docker-container-action@v1.1.0
       with:
-          context: .
-          file: Dockerfile
-          push: true
-          tags: flagexplorere-image:latest  # Replace with your image name
-
-    - name: Run tests
-      run: |
-          docker run --rm flagexplorere-image:latest ./run-tests.sh  # Adjust as necessary
+        image: flagexplorer-image:latest
     
     # Execute all unit tests in the solution
     - name: Execute unit tests
