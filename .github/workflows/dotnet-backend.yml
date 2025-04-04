@@ -75,8 +75,18 @@ jobs:
       uses: microsoft/setup-msbuild@v2
 
     #Add docker support
-    - name: Execute-in-windows-docker-container
-      uses: philips-software/run-windows-docker-container-action@v1.1.0
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v1
+    - name: Build Docker image
+      run: |
+          docker build -t my-windows-image:latest .
+
+    - name: Run Docker container
+      run: |
+          docker run --name my-windows-container my-windows-image:latest
      
     # Execute all unit tests in the solution
     - name: Execute unit tests
