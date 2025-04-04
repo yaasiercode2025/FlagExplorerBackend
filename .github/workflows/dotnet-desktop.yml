@@ -32,20 +32,10 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-    #- name: Setup MSBuild.exe
-    # uses: microsoft/setup-msbuild@v2
-
-    #Add docker support
+    #Checkout code
     - name: Checkout code
       uses: actions/checkout@v2
-
-    #- name: Build Docker image
-    #  run: docker build -t mcr.microsoft.com/mssql/server:2022-CU14-ubuntu-22.04 .
-
-    #- name: Run Docker container
-    #  run: docker run --name myapp-container -d mcr.microsoft.com/mssql/server:2022-CU14-ubuntu-22.04
-        
+    
     # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test
