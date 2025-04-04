@@ -77,9 +77,7 @@ jobs:
     #Add docker support
     - name: Execute-in-windows-docker-container
       uses: philips-software/run-windows-docker-container-action@v1.1.0
-      with:
-        image: flagexplorer-image:latest
-    
+     
     # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test
