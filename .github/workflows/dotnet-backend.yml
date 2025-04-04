@@ -79,14 +79,14 @@ jobs:
       
     - name: Build and push Docker image
       uses: docker/build-push-action@v2
-        with:
+      with:
           context: .
           file: Dockerfile
           push: true
           tags: mssql:latest  # Replace with your image name
 
-      - name: Run tests
-        run: |
+    - name: Run tests
+      run: |
           docker run --rm your-docker-image:latest ./run-tests.sh  # Adjust as necessary
     
     # Execute all unit tests in the solution
