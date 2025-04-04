@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "FlagExplorer.Testing": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
