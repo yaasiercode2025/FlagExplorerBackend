@@ -32,10 +32,6 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    #Checkout code
-    - name: Checkout code
-      uses: actions/checkout@v2
-    
     # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test
