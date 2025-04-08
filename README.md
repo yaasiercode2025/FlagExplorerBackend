@@ -1,6 +1,6 @@
 # Flag Explorer Setup
 
-This project was created using .netCore.
+This project was created using .net 8.0.
 
 # Software required
  Download and install docker from this [link](https://www.docker.com/products/docker-desktop/). This is required to run the unit and integration tests. 
